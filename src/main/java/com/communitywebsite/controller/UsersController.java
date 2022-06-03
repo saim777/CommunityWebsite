@@ -22,6 +22,13 @@ public class UsersController {
         return new ResponseEntity(response, HttpStatus.CREATED);
     }
 
+    @GetMapping("/hello")
+    public String welcomePage(){
+
+        return "hello welcome";
+    }
+
+
    @GetMapping("/login")
     public ResponseEntity userLogin(@RequestParam String email, @RequestParam String password){
         var user=userService.userLogin(email,password);
