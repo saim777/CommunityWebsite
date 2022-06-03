@@ -24,7 +24,7 @@ public class UsersController {
 
     @GetMapping("/hello")
     public String welcomePage(){
-
+            System.out.println("Hello Welcome to my Page");
         return "hello welcome";
     }
 
