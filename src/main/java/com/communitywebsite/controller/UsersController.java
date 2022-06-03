@@ -30,10 +30,10 @@ public class UsersController {
 
 
    @GetMapping("/login")
-    public String userLogin(@RequestParam("email") String email, @RequestParam("password") String password){
-   //  var user=userService.userLogin(email,password);
-        //if(user==null)  return new ResponseEntity<>("User Doesn't Exist",HttpStatus.NOT_FOUND);
-        //return new ResponseEntity(user,HttpStatus.ACCEPTED);
-       return "login "+email+" "+password;
+    public ResponseEntity userLogin(@RequestParam("email") String email, @RequestParam("password") String password){
+     var user=userService.userLogin(email,password);
+        if(user==null)  return new ResponseEntity<>("User Doesn't Exist",HttpStatus.NOT_FOUND);
+        return new ResponseEntity(user,HttpStatus.ACCEPTED);
+       //return "login "+email+" "+password;
     }
 }
