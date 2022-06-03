@@ -29,6 +29,8 @@ public class UsersController {
     }
 
 
+
+  @CrossOrigin(origins = "http://localhost:3000")
    @GetMapping("/login")
     public ResponseEntity userLogin(@RequestParam("email") String email, @RequestParam("password") String password){
      var user=userService.userLogin(email,password);
