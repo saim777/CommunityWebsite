@@ -31,6 +31,7 @@ public class JobServiceImpl implements JobService {
       jobEntity.setLocation(jobPostedDto.getLocation());
       jobEntity.setSalary(jobPostedDto.getSalary());
       jobEntity.setPostedDate(jobPostedDto.getPostedDate());
+      jobEntity.setLinkJob(jobPostedDto.getLinkJob());
 
       jobEntity=jobRepository.save(jobEntity);
 

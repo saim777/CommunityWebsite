@@ -21,4 +21,6 @@ public class JobPostedDto {
     private String jobType;
 
     private String location;
+
+    private String linkJob;
 }

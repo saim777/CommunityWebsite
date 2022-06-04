@@ -41,5 +41,8 @@ public class JobEntity {
     @Column(name = "location")
     private String location;
 
+    @Column(name = "link_job")
+    private String linkJob;
+
 }
 
