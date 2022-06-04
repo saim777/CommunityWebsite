@@ -13,7 +13,7 @@ public class UsersController {
 
     @Autowired
     private UserService userService;
-
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/register")
     public ResponseEntity resgisterUser(@RequestBody UserRegistrationDto userRegistrationDto){
 
@@ -21,7 +21,7 @@ public class UsersController {
 
         return new ResponseEntity(response, HttpStatus.CREATED);
     }
-
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/hello")
     public String welcomePage(){
             System.out.println("Hello Welcome to my Page");

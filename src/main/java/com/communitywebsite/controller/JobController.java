@@ -16,12 +16,15 @@ public class JobController {
     @Autowired
     private JobService jobService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/postJob")
     public ResponseEntity<JobPostedDto> postjob(@RequestBody JobPostedDto jobPostedDto){
         var responseJobpostedDto=jobService.postJob(jobPostedDto);
         if(responseJobpostedDto==null) new ResponseEntity<>("Something went wrong in JobController",HttpStatus.INTERNAL_SERVER_ERROR);
         return new ResponseEntity<>(responseJobpostedDto,HttpStatus.CREATED);
     }
+
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/getJob")
     public ResponseEntity<List<JobEntity>> findAllJobs(){
         var responseList=jobService.findAllJobs();

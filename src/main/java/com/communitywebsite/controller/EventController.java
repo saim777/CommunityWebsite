@@ -18,6 +18,7 @@ public class EventController {
     private EventService eventService;
 
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/postEvent")
     public ResponseEntity<EventPostedDto> postEvent(@RequestBody EventPostedDto eventPostedDto){
         var responseEventpostedDto=eventService.postEvent(eventPostedDto);
@@ -26,6 +27,7 @@ public class EventController {
     }
 
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/getAllEvent")
     public ResponseEntity<List<EventEntity>> getAllEvent(){
         var responseList=eventService.getAllEvent();
