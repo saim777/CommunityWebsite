@@ -34,6 +34,7 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public List<EventEntity> getAllEvent() {
+
         return findAllEvent();
     }
 
